@@ -1,12 +1,12 @@
 CC = g++
 CFLAGS = -g -Wall
 
-default: vector
+default: test
 
-vector:	Vector.o main.o
-	$(CC) $(CFlags) -o vector Vector.o main.o
+test:	        Vector.o main.o
+	$(CC) $(CFlags) -o test Vector.o main.o
 
-Vector.o: Vector.cpp Vector.h
+Vector.o:       Vector.cpp Vector.h
 	$(CC) $(CFLAGS) -c Vector.cpp
 
 
@@ -14,4 +14,4 @@ main.o:	main.cpp Vector.h
 	$(CC) $(CFLAGS) -c main.cpp
 
 clean:
-	$(RM) vector *.o *~
+	$(RM) test *.o *~
